@@ -29,8 +29,9 @@ node_modules
 
 # Environment Variables (SECRETS)
 .env
-/server/.env
-/client/.env
+server/.env
+client/.env
+node_modules
 
 # Build files
 dist

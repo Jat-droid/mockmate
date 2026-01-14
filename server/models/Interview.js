@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const interviewSchema = new mongoose.Schema({
   userId: {
-    type: String, // <--- CHANGED FROM ObjectId TO String
+    type: String, 
     required: true
   },
   topic: {
@@ -16,6 +16,13 @@ const interviewSchema = new mongoose.Schema({
       timestamp: { type: Date, default: Date.now }
     }
   ],
+  // --- NEW FEEDBACK FIELDS ---
+  feedback: {
+    score: { type: Number }, // e.g., 8
+    summary: { type: String }, // "Good technical depth, but..."
+    strengths: [{ type: String }],
+    weaknesses: [{ type: String }]
+  },
   createdAt: { type: Date, default: Date.now }
 });
 
